@@ -4,7 +4,7 @@ fn main() {
     let lines = read_lines("day-2/input/input.txt");
     let mut p1_safe_reports = 0;
     let mut p2_safe_reports = 0;
-    for line in lines {
+    'line: for line in lines {
         let report_line: Vec<i32> = line.split(" ").map(|x| x.parse().unwrap()).collect();
 
         // Check to make sure each line in the report is all increasing or all decreasing
@@ -25,8 +25,9 @@ fn main() {
                 level_check = check_level(&vec);
                 adjancent_check = check_adjacency(&vec);
                 if level_check && adjancent_check {
+                    println!("{:?}", vec);
                     p2_safe_reports += 1;
-                    continue;
+                    continue 'line;
                 }
             }
         }
