@@ -25,9 +25,8 @@ fn main() {
                 level_check = check_level(&vec);
                 adjancent_check = check_adjacency(&vec);
                 if level_check && adjancent_check {
-                    println!("{:?}", vec);
                     p2_safe_reports += 1;
-                    continue 'line;
+                    continue 'line;  // Break out of this once the first one passes
                 }
             }
         }
