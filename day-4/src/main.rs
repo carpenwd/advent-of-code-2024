@@ -1,4 +1,4 @@
-use day_4::{part_1, read_lines};
+use day_4::{part_1, part_2, read_lines};
 
 fn main() {
     let lines = read_lines("day-4/input/input.txt");
@@ -11,5 +11,5 @@ fn main() {
     let length: usize = puzzle.len();
     let width: usize = puzzle[0].len();
     println!("Part-1 Total: {}", part_1(&puzzle, length, width));
-    //println!("Part-2 Total: {}", part_1(&puzzle, length, width));
+    println!("Part-2 Total: {}", part_2(&puzzle, length, width));
 }
